@@ -39,6 +39,7 @@ export const PokemonServices = {
               name: poke.data.name,
               experiencia: poke.data.base_experience,
               habilidades: poke.data.abilities,
+              id: poke.data.id,
             };
           })
 
@@ -53,7 +54,22 @@ export const PokemonServices = {
       return arrayCards;
     } catch (error) {
       console.error("Error al procesar las tarjetas de Pokémon", error);
-      return []; 
+      return [];
     }
+  },
+  deleteRegisterIndb(array, index) {
+    array = array.filter((element) => element?.id != index);
+    return array;
+  },
+  getPokemonForID(array, id) {
+    const respuesta = array.filter((item) => item?.id == id);
+    return respuesta;
+  },
+  updatePokemonForIdSercive(array, objNew) {
+    const index = array.findIndex((element) => element.id === objNew.id);
+    if (index !== -1) {
+      array[index] = { ...objNew, id: objNew.id }; // Aseguramos que el ID no cambie
+    }
+    return array;
   },
 };
