@@ -39,7 +39,7 @@ export const usePokemonStore = defineStore("pokemon", {
         this.pokemons
       );
       this.arrayCards.values = respuesta;
-
+      console.log(this.arrayCards.values)
       localStorage.setItem("arrayCards", JSON.stringify(this.arrayCards.values));
     },
     async deleteRegisterIndb(id) {
@@ -48,7 +48,8 @@ export const usePokemonStore = defineStore("pokemon", {
         id
       );
       this.arrayCards.values = response;
-      localStorage.setItem('arrayCards',this.arrayCards.values)
+      localStorage.setItem('arrayCards',JSON.stringify(this.arrayCards.values))
+
     },
     async reiniciar() {
       this.pokemonEditTemp.values = {

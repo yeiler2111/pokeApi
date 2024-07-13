@@ -61,8 +61,8 @@ export const PokemonServices = {
     array = array.filter((element) => element?.id != index);
     return array;
   },
-  getPokemonForID(array, id) {
-    const respuesta = array.filter((item) => item?.id == id);
+  getPokemonForID(array, index) {
+    const respuesta = array.filter((item) => item?.id == index);
     return respuesta;
   },
   updatePokemonForIdSercive(array, objNew) {
