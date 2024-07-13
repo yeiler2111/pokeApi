@@ -46,6 +46,7 @@ onMounted(() => {
   if (localStorage.getItem("arrayCards")) {
     store.arrayCards.values = JSON.parse(localStorage.getItem("arrayCards"));
   } else {
+    console.log('estoy consumiendo el api')
     store.fetchPokemons();
   }
 });
