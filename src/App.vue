@@ -6,16 +6,15 @@
 </template>
 
 <script setup>
-import { usePokemonStore } from "@/pinia/index";
 import { onMounted } from "vue";
 import navVar from "./components/navVar.vue";
-import { PokemonServices } from "./services/PokemonServices";
+import { usePokemonStore } from "./pinia/index";
 
 const store = usePokemonStore();
-store.fetchPokemons(40);
-
 onMounted(() => {
-  PokemonServices.getInformationPokemonForId();
+  if (localStorage.getItem("arrayCard")) {
+    store.fetchPokemons(100)
+  }
 });
 </script>
 

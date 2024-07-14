@@ -1,8 +1,8 @@
 import DashboardPokemon from "@/components/dashboardPokemon.vue";
 import EditComponent from "@/components/EditComponent.vue";
 import { usePokemonStore } from "@/pinia/index";
-import { createRouter, createWebHistory } from "vue-router";
-
+import { createRouter, createWebHistory, } from "vue-router";
+// para produccion usar web createWebHashHistory()
 const routes = [
   {
     path: "/",
