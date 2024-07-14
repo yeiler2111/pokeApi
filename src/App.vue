@@ -1,15 +1,15 @@
 <template>
-  <navVar></navVar>
-  <router-view></router-view>
+  <div class="container m-3">
+    <navVar></navVar>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script setup>
 import { usePokemonStore } from "@/pinia/index";
 import { onMounted } from "vue";
-import { PokemonServices } from "./services/PokemonServices";
 import navVar from "./components/navVar.vue";
-
-
+import { PokemonServices } from "./services/PokemonServices";
 
 const store = usePokemonStore();
 store.fetchPokemons(40);
